@@ -1,30 +1,26 @@
-// // TODO: Create a function that returns a license badge based on which license is passed in
-// // If there is no license, return an empty string
+// this function renders the license badge that the user selected to generate a badge from the shields website
 function renderLicenseBadge(license) {
   if(license !== "None"){
     return `![License Badge](https://img.shields.io/badge/License-${license}-brightgreen)`
   }
     return "";
 };
-// // TODO: Create a function that returns the license link
-// // If there is no license, return an empty string
+
+// this function renders the license link base on what the user selected for their license
 function renderLicenseLink(license) {
   switch (license) {
-    case value:
-      
-      break;
-  
-    default:
-      break;
+    case `MIT`: 
+    return "[License MIT](https://opensource.org/licenses/MIT)"
+    case `Apache`:
+    return "[License: Apache 2.0](https://opensource.org/licenses/Apache-2.0)"
+    case `ISC`:
+    return "[License: ISC](https://opensource.org/licenses/ISC)"
+    case `IBM`:
+    return "[License: IPL 1.0](https://opensource.org/licenses/IPL-1.0)"
   }
-  // if(license !== "None"){
-  // return `* [License Link]((https://opensource.org/licenses/${data.license}))`
-  // }
-  // return "";
 };
 
-// // TODO: Create a function that returns the license section of README
-// // If there is no license, return an empty string
+// this function displays the License section to the README if a license was selected other than none.
 function renderLicenseSection(license) {
   if(license !== "None"){
     return `## License
@@ -34,7 +30,7 @@ function renderLicenseSection(license) {
     return "There is no license associated with this project.";
 }
 
-// // TODO: Create a function to generate markdown for README
+// this generates the content on the readme file each section has data provide by the user by ${data.whatever input}
 function generateMarkdown(data) {
   return `
 <h1 align="center"> ${data.title} </h1>
@@ -82,7 +78,7 @@ ${data.technologiesUsed}
 ${renderLicenseBadge(data.license)}
 
 ${renderLicenseSection(data.license)}
-${renderLicenseSection(data.license)}
+* ${renderLicenseLink(data.license)}
 
 
 ## Questions
@@ -102,4 +98,5 @@ ${data.test}
 `;
 }
 
+//exports the data to README
 module.exports = generateMarkdown;

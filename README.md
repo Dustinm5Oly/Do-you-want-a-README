@@ -1,13 +1,18 @@
+<h1 align="center"> Do-you-want-a-README </h1>
 
-<h1 align="center"> dsfa </h1>
+----
 
-![License Badge](https://img.shields.io/badge/License-GPL%203.0-brightgreen)
+## Desktop Demo
+<img src= "./images/README.gif"></img>
+
+----
 
 ## Description
-* sdf
+* This is an application to generate a professional README.md file. 
 
-GitHub Repository: [**d**](https://github.com/d/dsfa)
+GitHub Repository: [**Dustinm5Oly**](https://github.com/Dustinm5Oly/Do-you-want-a-README)
 
+----
 
 ## Table of Contents
 * [Description](#description)
@@ -22,34 +27,45 @@ GitHub Repository: [**d**](https://github.com/d/dsfa)
 * [Questions](#questions)
 * [Test](#test)
 
+----
+
 ## Installation
-a
+To be able to run the application you will have to open up your terminal from the index.js file then run npm init -y to install the pasckage.json. Then you will install inquirer by running npm i inquirer@8.2.4 from your terminal. After these are installed you can run node index from your terminal and follow the prompts to apply the datat to your new README.
+
+----
 
 ## User-Story
-ds
+As a user I wasn to generate a professional README.md by using node to generate a new file with data I enter into the terminal. 
+
+----
 
 ## Usage
-fa
+The user will use this application to construct a professional readme from just answering questions instead of trying to construct one from scratch.
+
+----
 
 ## Contributions
-sdf
+If you would like to contribute to this application you can contact me from the Credits in this readme.
+
+----
 
 ## Credits
-as
+There are no collaborators on this project.
+
+----
 
 ## Technologies-Used
-d
+Inquirer, FS.
+
+----
 
 ## Badges
-![License Badge](https://img.shields.io/badge/License-GPL%203.0-brightgreen)
 
-## License
-    
-    This project is licensed under the GPL%203.0 license.
-## License
-    
-    This project is licensed under the GPL%203.0 license.
 
+There is no license associated with this project.
+* undefined
+
+-----
 
 ## Questions
 *For further questions:*
@@ -58,10 +74,14 @@ If you have any questions, how to contribute or additional feedback, please cont
 
 *Contact Info:*
 
-GitHub: [**d**](https://github.com/d)
+GitHub: [**Dustinm5Oly**](https://github.com/Dustinm5Oly)
 
-Email: sdfsdf@asd.aas
+Email: dustinm50@gmail.com
+
+----
 
 ## Test
-sdfa
+npm init -y, npm i inquirer@8.2.4, node index
+
+
 
