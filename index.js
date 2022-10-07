@@ -1,7 +1,7 @@
 // TODO: Include packages needed for this application
 const fs = require(`fs`);
 const inquirer = require(`inquirer`);
-const { SocketAddress } = require("net");
+const path = require(`path`);
 
 const generateMarkdown = require(`./utils/generateMarkdown`);
 
@@ -22,7 +22,7 @@ const questions = [
         },
         {
             type: `input`,
-            name: 'project-description',
+            name: 'projectDescription',
             message: `Please provide a description of your project.`,
             validate: nameInput => {
                 if (nameInput) {
@@ -35,7 +35,7 @@ const questions = [
         },
         {
             type: `input`,
-            name: 'installation-procedure',
+            name: 'installationProcedure',
             message: `Please provide the steps required to install your project.`,
             validate: nameInput => {
                 if (nameInput) {
@@ -48,7 +48,7 @@ const questions = [
         },
         {
             type: `input`,
-            name: 'user-story',
+            name: 'userStory',
             message: `Please provide a user story for your project.`,
             validate: nameInput => {
                 if (nameInput) {
@@ -87,7 +87,7 @@ const questions = [
         },
         {
             type: `input`,
-            name: 'Credits',
+            name: 'credits',
             message: `Did you have any collaborators in this project?`,
             validate: nameInput => {
                 if (nameInput) {
@@ -100,7 +100,7 @@ const questions = [
         },
         {
             type: `input`,
-            name: 'technologies-used',
+            name: 'technologiesUsed',
             message: `Where there any technologies used in this project?`,
             validate: nameInput => {
                 if (nameInput) {
@@ -138,7 +138,7 @@ const questions = [
         },
         {
             type: `input`,
-            name: 'GitHub',
+            name: 'github',
             message: `What is your GitHub username?`,
             validate: nameInput => {
                 if (nameInput) {
@@ -153,19 +153,28 @@ const questions = [
             type: `list`,
             name: 'license',
             message: `What license was used in this project?`,
-            choices: [`MIT`,`Apache 2.0`, `GPL 3.0`, `BSD 3`, `None`]
+            choices: [`MIT`,`Apache%202.0`, `GPL%203.0`, `BSD%203`, `None`]
         },
         {
             type: `input`,
             name: 'test',
-            message: `What command should be run to perform tests?`
-        }.then(console.log("Success")),
+            message: `What command should be run to perform tests?`,
+            validate: nameInput => {
+                if (nameInput) {
+                    return true;
+                } else {
+                    console.log(`Please enter your GitHub username!`);
+                    return false;
+                }
+            }
+        }
 ];
 
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
     return fs.writeFileSync(path.join(process.cwd(), fileName), data);
+    // return fs.writeFile(fileName, data, (err => err ? console.log (err): console.log("Success")));
 }
 
 // TODO: Create a function to initialize app
@@ -174,6 +183,7 @@ function init() {
         console.log("generating readme");
         writeToFile("README.md", generateMarkdown({...inquirerResponses}))
     })
+    .catch (err => err ? console.log (err): console.log("Fail"))
 }
 
 // Function call to initialize app
