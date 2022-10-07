@@ -1,0 +1,23 @@
+{
+  "name": "static-site",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "inquirer": "^8.2.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dustinm5Oly/Do-you-want-a-README.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/Dustinm5Oly/Do-you-want-a-README/issues"
+  },
+  "homepage": "https://github.com/Dustinm5Oly/Do-you-want-a-README#readme",
+  "description": ""
+}
